@@ -1,19 +1,35 @@
-# Proyecto-Paint
- En este branch se adjutara el proyecto paint con comandos
-El código proporcionado es un programa básico de dibujo utilizando la biblioteca Pygame en Python. Aquí hay un resumen de lo que hace el código:
+# Proyecto 'Paint' a base de comandos en consola.
 
-Importa los módulos pygame y math.
-Inicializa Pygame llamando a pygame.init().
-Crea una superficie de visualización de 800x600 píxeles utilizando pygame.display.set_mode((width, height)).
-Define el color de fondo y llena la superficie con ese color.
-Define un diccionario de colores disponibles.
-Establece un color predeterminado para el fondo y otro para las líneas, y un grosor predeterminado para las líneas.
-Crea las clases Triangulo, TrianguloIsosceles, TrianguloEquilatero y TrianguloEscaleno que representan diferentes tipos de triángulos.
-Las clases de triángulo tienen un método draw() que dibuja el triángulo en la superficie.
-Define funciones para dibujar un cuadrado, un rectángulo, un círculo y una línea en la superficie.
-Hay funciones auxiliares para cambiar el color de fondo, borrar el último dibujo realizado y mostrar menús.
-El programa utiliza un bucle infinito que muestra el menú, recibe la entrada del usuario y ejecuta la acción correspondiente.
-Las opciones del menú permiten al usuario dibujar diferentes figuras, cambiar colores, cambiar el grosor de las líneas y borrar dibujos anteriores.
-El programa utiliza la entrada del usuario para interactuar con el usuario y realizar las acciones correspondientes utilizando las funciones y clases definidas anteriormente.
-El bucle infinito continúa hasta que el usuario elija la opción "exit", momento en el que se llama a pygame.quit() para cerrar la ventana y finalizar el programa.
-En resumen, el código crea un programa de dibujo interactivo utilizando la biblioteca Pygame en Python, donde el usuario puede dibujar y manipular diferentes formas en una superficie de visualización.
+## Informacion general.
+
+El archivo que se debe correr es 'correcciones.py'.
+
+Este codigo permite hacer lineas, cuadrados, rectangulos, circulos, tres tipos de triangulos distintos, cambiar el color del fondo asi como el color del dibujo, tambien da la opcion de deshacer el ultimo comando ejecutado.
+
+En cuanto se corre el codigo se muestran los comandos disponibles y la seleccion se efectua en base a la enumeracion que muestra el menu.
+
+Los colores soportados por este codigo son: rojo, verde, azul y amarillo.
+
+## Explicacion del codigo. 
+
+Se genera la interfaz grafica con dimensiones de 800 x 600 pixeles y se le da un color al fondo.
+
+Se muestran los colores soportados.
+
+Se crean variables para el color del fondo, el color del dibujo y el grosor del dibujo, asi como una lista para guardar los dibujos realizados.
+
+A continuacion se crea la clase triangulo que sera la clase padre para los tres distintos tipos de triangulos soportados, siendo estos el triangulo isosceles, equilatero y escaleno.
+
+Las clases piden como parametros los puntos de los vertices de dichos triangulos y en estas mismas clases se hacen los calculos para la creacion de la figura seleccionada con las configuraciones de color y grosor previamente seleccionadas desde el menu principal.
+
+Despues se tienen funciones para hacer cuadrados y rectangulos, estos tienen como entrada de parametros el punto de origen para la figura.
+
+La funcion circulo requiere que se le de el punto de origen y el radio de la circunferencia, este debe ser un valor positivo de lo contrario no se generara nada.
+
+Tambien esta la funcion para crear una linea solicitando las coordenadas de inicio y fin.
+
+El cambio del color de fondo se efectua con una funcion que manda a llamar la variable que contiene el color del fondo y la cambia por otro color que el usuario elija.
+
+La funcion para borrar el ultimo dibujo revisa cual es el ultimo objeto agragado en la lista que guarda los dibujos realizados y lo quita de la lista.
+
+Se tienen dos funciones que muestran tanto el menu principal como la seleccion del tipo de triangulo que se desea dibujar.
